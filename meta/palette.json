@@ -1,0 +1,8 @@
+{
+    "gallery-color-palette": {
+        "requires": [
+            "color"
+        ],
+        "skinnable": false
+    }
+}
