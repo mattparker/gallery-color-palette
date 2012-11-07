@@ -1,3 +1,4 @@
+YUI.add('gallery-color-palette', function (Y) {
 /**
  @author Matt Parker
  @class Y.Color
@@ -90,7 +91,7 @@ Palette.generate = function (color, count, options) {
         lMax = options.lMax || 80, // 100 gives repeated white
         lStep = options.lStep || 19,
         // startup
-        startColor = Col.toArray(Col.toHsl(color)),
+        startColor = Col.toArray(Col.toHSL(color)),
         h = startColor[0],
         s = startColor[1],
         l = startColor[2],
@@ -118,7 +119,7 @@ Palette.generate = function (color, count, options) {
     // generate colors
     while (colors.length < count) {
 
-        colors.push(Col.fromArray([h, s, l], Col.STR_HSL));
+        colors.push(Col.fromArray([h, s, l], "HSL"));
 
         j = j + 1;
         h += hStep;
@@ -162,4 +163,7 @@ Palette.mixupColors = function (colors) {
     return ret;
 };
 
-Y.Namespace("Color").Palette = Palette;
+Y.namespace("Color").Palette = Palette;
+
+
+}, "0.1", ['color']);
