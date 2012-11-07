@@ -1,0 +1,10 @@
+{
+    "name": "gallery-color-palette",
+    "builds": {
+        "gallery-color-palette": {
+            "jsfiles": [
+                "palette.js"
+            ]
+        }
+    }
+}
