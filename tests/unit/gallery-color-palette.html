@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Color Palette Tests</title>
+<script src="http://yui.yahooapis.com/3.8.0pr1/build/yui/yui-min.js"></script>
+</head>
+
+<body class="yui3-skin-sam">
+<h1>Color Tests</h1>
+
+<div id="log"></div>
+
+<script type="text/javascript">
+YUI({
+    filter: (window.location.search.match(/[?&]filter=([^&]+)/) || [])[1] || 'raw',
+    combine: false,
+    modules: {
+        'gallery-color-palette': {
+            fullpath: '../../js/palette.js',
+            requires: ['color']
+        },
+        'gallery-color-palette-tests': {
+            fullpath: './assets/gallery-color-palette-tests.js',
+            requires: [ 'test', 'dump', 'color', 'gallery-color-palette' ]
+        }
+    }
+}).use("test-console", "gallery-color-palette-tests", function(Y) {
+
+    (new Y.Test.Console()).render('#log');
+
+    Y.Test.Runner.run();
+});
+</script>
+</body>
+</html>
