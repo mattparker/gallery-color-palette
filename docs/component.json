@@ -1,0 +1,11 @@
+{
+    "name"       : "gallery-color-palette",
+    "displayName": "Gallery Color Palette Generator",
+    "description": "Creates a palette of reasonably and predictably different colors for things like charts",
+    "author"     : "mattparker",
+
+    "tags": ["gallery", "color"],
+    "use" : ["gallery-color-palette"],
+
+    "examples": []
+}
