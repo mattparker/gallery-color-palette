@@ -1,3 +1,10 @@
+<style type="text/css">
+.swatch {
+	width: 30px;
+height: 30px;
+display: inline-block;
+}
+</style>
 <div class="intro">
 <p>
 	The Color palette generator creates an arbitrarily large array of colors.
@@ -39,6 +46,23 @@
 	```
 	var myColors = Y.Color.generatePalette("#0095FF", 15);
 	```
+	<div>
+		<span class="color swatch" title="hsl(205, 100%, 50%)" style="background-color:hsl(205, 100%, 50%)"></span>
+		<span class="color swatch" title="hsl(4, 53%, 77%)" style="background-color:hsl(4, 53%, 77%)"></span>
+		<span class="color swatch" title="hsl(28, 86%, 58%)" style="background-color:hsl(28, 86%, 58%)"></span>
+		<span class="color swatch" title="hsl(52, 31%, 39%)" style="background-color:hsl(52, 31%, 39%)"></span>
+		<span class="color swatch" title="hsl(76, 64%, 20%)" style="background-color:hsl(76, 64%, 20%)"></span>
+		<span class="color swatch" title="hsl(100, 97%, 77%)" style="background-color:hsl(100, 97%, 77%)"></span>
+		<span class="color swatch" title="hsl(124, 42%, 58%)" style="background-color:hsl(124, 42%, 58%)"></span>
+		<span class="color swatch" title="hsl(148, 75%, 39%)" style="background-color:hsl(148, 75%, 39%)"></span>
+		<span class="color swatch" title="hsl(172, 20%, 20%)" style="background-color:hsl(172, 20%, 20%)"></span>
+		<span class="color swatch" title="hsl(196, 53%, 77%)" style="background-color:hsl(196, 53%, 77%)"></span>
+		<span class="color swatch" title="hsl(220, 86%, 58%)" style="background-color:hsl(220, 86%, 58%)"></span>
+		<span class="color swatch" title="hsl(244, 31%, 39%)" style="background-color:hsl(244, 31%, 39%)"></span>
+		<span class="color swatch" title="hsl(268, 64%, 20%)" style="background-color:hsl(268, 64%, 20%)"></span>
+		<span class="color swatch" title="hsl(292, 97%, 77%)" style="background-color:hsl(292, 97%, 77%)"></span>
+		<span class="color swatch" title="hsl(316, 42%, 58%)" style="background-color:hsl(316, 42%, 58%)"></span>
+	</div>
 	<p>By default, the array will be ordered by hue.  For larger arrays of 
 		colors, you may wish to mix these up: `Y.Color.mixupColors` will do
 		this for you:</p>
@@ -46,4 +70,21 @@
 	var mixedColors = Y.Color.mixupColors(myColors);
 	```
 	<p>These will be the same colors, in a different order.</p>
+	<div>
+		<span class="color swatch" title="hsl(205, 100%, 50%)" style="background-color:hsl(205, 100%, 50%)"></span>
+		<span class="color swatch" title="hsl(28, 86%, 58%)" style="background-color:hsl(28, 86%, 58%)"></span>
+		<span class="color swatch" title="hsl(76, 64%, 20%)" style="background-color:hsl(76, 64%, 20%)"></span>
+		<span class="color swatch" title="hsl(124, 42%, 58%)" style="background-color:hsl(124, 42%, 58%)"></span>
+		<span class="color swatch" title="hsl(172, 20%, 20%)" style="background-color:hsl(172, 20%, 20%)"></span>
+		<span class="color swatch" title="hsl(220, 86%, 58%)" style="background-color:hsl(220, 86%, 58%)"></span>
+		<span class="color swatch" title="hsl(268, 64%, 20%)" style="background-color:hsl(268, 64%, 20%)"></span>
+		<span class="color swatch" title="hsl(316, 42%, 58%)" style="background-color:hsl(316, 42%, 58%)"></span>
+		<span class="color swatch" title="hsl(4, 53%, 77%)" style="background-color:hsl(4, 53%, 77%)"></span>
+		<span class="color swatch" title="hsl(52, 31%, 39%)" style="background-color:hsl(52, 31%, 39%)"></span>
+		<span class="color swatch" title="hsl(100, 97%, 77%)" style="background-color:hsl(100, 97%, 77%)"></span>
+		<span class="color swatch" title="hsl(148, 75%, 39%)" style="background-color:hsl(148, 75%, 39%)"></span>
+		<span class="color swatch" title="hsl(196, 53%, 77%)" style="background-color:hsl(196, 53%, 77%)"></span>
+		<span class="color swatch" title="hsl(244, 31%, 39%)" style="background-color:hsl(244, 31%, 39%)"></span>
+		<span class="color swatch" title="hsl(292, 97%, 77%)" style="background-color:hsl(292, 97%, 77%)"></span>
+	</div>
 </div>
