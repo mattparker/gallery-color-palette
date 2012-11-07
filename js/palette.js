@@ -11,6 +11,7 @@
 
 
 var Col = Y.Color,
+    Palette = {},
     /**
      We need a way of looping through an array (we assume an ordered array)
      so that we use every value from the array once and only once, in a 
@@ -71,7 +72,7 @@ another, for example to color in pie-charts with lots of slices.
 
 @return Array               Of colors
 */
-Col.generatePalette = function (color, count, options) {
+Palette.generate = function (color, count, options) {
 
     var options = options || {},
         color = color || "#FF0000",
@@ -149,7 +150,7 @@ Col.generatePalette = function (color, count, options) {
 @param {Array} colors    Array of colors
 @return {Array} 
 */
-Col.mixupColors = function (colors) {
+Palette.mixupColors = function (colors) {
 
     var step = findStep(colors.length),
         i,
@@ -160,3 +161,5 @@ Col.mixupColors = function (colors) {
     }
     return ret;
 };
+
+Y.Namespace("Color").Palette = Palette;
