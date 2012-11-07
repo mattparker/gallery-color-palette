@@ -27,7 +27,7 @@ display: inline-block;
 	</p>
 	```
 	YUI().use("gallery-color-palette", function (Y) {
-		// Y.Color.generatePalette is now available
+		// Y.Color.Palette.generate is now available
 	});
 	```
 	<p>`generatePalette` accepts three arguments, all of which are optional:</p>
@@ -44,7 +44,7 @@ display: inline-block;
 	</dl>
 	<p>To create 15 colors, starting from mid-blue:</p>
 	```
-	var myColors = Y.Color.generatePalette("#0095FF", 15);
+	var myColors = Y.Color.Palette.generate("#0095FF", 15);
 	```
 	<div>
 		<span class="color swatch" title="hsl(205, 100%, 50%)" style="background-color:hsl(205, 100%, 50%)"></span>
@@ -64,10 +64,10 @@ display: inline-block;
 		<span class="color swatch" title="hsl(316, 42%, 58%)" style="background-color:hsl(316, 42%, 58%)"></span>
 	</div>
 	<p>By default, the array will be ordered by hue.  For larger arrays of 
-		colors, you may wish to mix these up: `Y.Color.mixupColors` will do
+		colors, you may wish to mix these up: `Y.Color.Palette.mixupColors` will do
 		this for you:</p>
 	```
-	var mixedColors = Y.Color.mixupColors(myColors);
+	var mixedColors = Y.Color.Palette.mixupColors(myColors);
 	```
 	<p>These will be the same colors, in a different order.</p>
 	<div>
