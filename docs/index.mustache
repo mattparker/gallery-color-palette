@@ -1,0 +1,49 @@
+<div class="intro">
+<p>
+	The Color palette generator creates an arbitrarily large array of colors.
+	The colors will be sorted so that one color is reasonably different to
+	the next.  
+</p>
+</div>
+<div>
+<p>
+	This is initially designed for use with Charts where you have
+	more data series than built-in colours (Charts gives you 10) so that you
+	can have different colored lines, reasonably different to each other, and
+	so that consecutive data series have distinguishable colours.
+</p>
+</div>
+<h3>Using Y.Color.generatePalette</h3>
+<div>
+	<p>
+		To use generatePalette, include it in your use() statement
+	</p>
+	```
+	YUI().use("gallery-color-palette", function (Y) {
+		// Y.Color.generatePalette is now available
+	});
+	```
+	<p>`generatePalette` accepts three arguments, all of which are optional:</p>
+	<dl>
+		<dt>color</dt>
+		<dd>A string giving the start color for the palette.  This will be the first
+			color in the array that's returned.  The default value is #FF0000.
+		</dd>
+		<dt>count</dt>
+		<dd>The number of colors you want to generate.</dd>
+		<dt>options</dt>
+		<dd>An object literal that gives you greater control over the colors generated
+			by limited the range of hues, saturation and luminance used.</dd>
+	</dl>
+	<p>To create 15 colors, starting from mid-blue:</p>
+	```
+	var myColors = Y.Color.generatePalette("#0095FF", 15);
+	```
+	<p>By default, the array will be ordered by hue.  For larger arrays of 
+		colors, you may wish to mix these up: `Y.Color.mixupColors` will do
+		this for you:</p>
+	```
+	var mixedColors = Y.Color.mixupColors(myColors);
+	```
+	<p>These will be the same colors, in a different order.</p>
+</div>
