@@ -126,10 +126,11 @@ Palette.generate = function (color, count, options) {
         s = sVals[(j * sValsStep) % sVals.length];
         l = lVals[(j * lValsStep) % lVals.length];
 
-        h = h % 360;
+        
         if (h > hMax) {
             h = hMin + (h - hMax);
         }
+        h = h % 360;
 
 
     }
