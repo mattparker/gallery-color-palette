@@ -30,7 +30,7 @@ YUI.add('gallery-color-palette-tests', function(Y) {
             },
 
             "test limit hue options": function () {
-            	var pal = Y.Color.Palette.generate("#0000FF", 5, {hMin:240, hMax: 360, hStep: 10});
+            	var pal = Y.Color.Palette.generate("hsl(240,100%,50%)", 5, {hMin:240, hMax: 360, hStep: 10});
              	Equal(5, pal.length, 'generates 5 colors');
             	Equal("hsl(240, 100%, 50%)", pal[0], 'First is blue');
             	Equal("hsl(250, 53%, 77%)", pal[1], 'Second is blue');

@@ -15,8 +15,8 @@ var Col = Y.Color,
     Palette = {},
     /**
      We need a way of looping through an array (we assume an ordered array)
-     so that we use every value from the array once and only once, in a 
-     deterministic manner, but so that we jump around the array, not 
+     so that we use every value from the array once and only once, in a
+     deterministic manner, but so that we jump around the array, not
      just iterating through.
 
      This function tries to find a number that's not a divisor of
@@ -25,12 +25,12 @@ var Col = Y.Color,
      for example).
 
      This is a utility function used by the main palette generator below
-     as a way of deterministically trying to make sure you don't end up 
+     as a way of deterministically trying to make sure you don't end up
      with similar colours next to each other.
 
      @private
      @param {Number} num     Size of the array we'll be iterating later
-     @return {Number}        
+     @return {Number}
     */
     findStep = function (num) {
 
@@ -75,26 +75,26 @@ another, for example to color in pie-charts with lots of slices.
 */
 Palette.generate = function (color, count, options) {
 
-    var options = options || {},
-        color = color || "#FF0000",
-        count = count || 10,
+    var opts = options || {},
+        baseCol = color || "#FF0000",
+        num = count || 10,
         // hue:
-        hMin = options.hMin || 0,
-        hMax = options.hMax || 360,
-        hStep = options.hStep || (hMax - hMin) / (count === 0 ? 1 : count),
+        hMin = opts.hMin || 0,
+        hMax = opts.hMax || 360,
+        hStep = opts.hStep || (hMax - hMin) / (num === 0 ? 1 : num),
         // saturation:
-        sMin = options.sMin || 20, // 0 gives too many greys
-        sMax = options.sMax || 100,
-        sStep = options.sStep || 11,
+        sMin = opts.sMin || 20, // 0 gives too many greys
+        sMax = opts.sMax || 100,
+        sStep = opts.sStep || 11,
         // luminance
-        lMin = options.lMin || 20, // 0 gives repeated black
-        lMax = options.lMax || 80, // 100 gives repeated white
-        lStep = options.lStep || 19,
+        lMin = opts.lMin || 20, // 0 gives repeated black
+        lMax = opts.lMax || 80, // 100 gives repeated white
+        lStep = opts.lStep || 19,
         // startup
-        startColor = Col.toArray(Col.toHSL(color)),
-        h = startColor[0],
-        s = startColor[1],
-        l = startColor[2],
+        startColor = Col.toArray(Col.toHSL(baseCol)),
+        h = parseInt(startColor[0], 10),
+        s = parseInt(startColor[1], 10),
+        l = parseInt(startColor[2], 10),
         colors = [],
         sVals = [],
         sValsStep,
@@ -117,7 +117,7 @@ Palette.generate = function (color, count, options) {
     j = 0;
 
     // generate colors
-    while (colors.length < count) {
+    while (colors.length < num) {
 
         colors.push(Col.fromArray([h, s, l], "HSL"));
 
@@ -126,7 +126,7 @@ Palette.generate = function (color, count, options) {
         s = sVals[(j * sValsStep) % sVals.length];
         l = lVals[(j * lValsStep) % lVals.length];
 
-        
+
         if (h > hMax) {
             h = hMin + (h - hMax);
         }
@@ -142,15 +142,15 @@ Palette.generate = function (color, count, options) {
 
 
 /**
- Mixes up an array of colors (or anything else) predictably.  
- Takes every (p modulo l)-th item from the array, l = colors.length 
+ Mixes up an array of colors (or anything else) predictably.
+ Takes every (p modulo l)-th item from the array, l = colors.length
  and p is (if possible) not a divisor of l.
 
 @method mixupColors
 @static
 @public
 @param {Array} colors    Array of colors
-@return {Array} 
+@return {Array}
 */
 Palette.mixupColors = function (colors) {
 

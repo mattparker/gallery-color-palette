@@ -7,5 +7,13 @@
     "tags": ["gallery", "color"],
     "use" : ["gallery-color-palette"],
 
-    "examples": []
+    "examples": [{
+            "name"       : "palette-interactive",
+            "displayName": "Color palette generator",
+            "description": "Generate a color palette from a start color, as big as you want",
+            "modules"    : ["gallery-color-palette"],
+            "tags"       : ["color"],
+
+            "hideTableOfContents": true
+        }]
 }

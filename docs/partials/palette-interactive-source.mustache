@@ -1,0 +1,58 @@
+<style type="text/css">
+.swatch{
+	width: 40px;
+	height: 40px;
+	display:inline-block;
+	margin: 5px;
+}
+</style>
+
+
+<form id="palette-control">
+	<div>
+		<label for="start-color">Start color:</label>
+		<input id="start-color" name="start-color" placeholder="Start color" value="#F34A2E"/>
+	</div>
+	<div>
+		<label for="num-colors">Number of colors in palette:</label>
+		<input id="num-colors" name="num-colors" placeholder="Number of colors required" value="5" type="number"/>
+	</div>
+</form>
+
+<h3>Color palette generated:</h3>
+<div id="palette-results"></div>
+<h3>Same palette, mixed up:</h3>
+<div id="palette-mix-results"></div>
+
+
+<script type="text/javascript">
+YUI({
+	modules: {
+        'gallery-color-palette': {
+            fullpath: '../../js/palette.js',
+            requires: ['color']
+        }
+    }}).use('node', 'color', 'gallery-color-palette', function (Y) {
+
+    	var startCol = Y.one("#start-color"),
+    		numCols = Y.one("#num-colors"),
+    		generatePalette = function () {
+    			var pal = Y.Color.Palette.generate(startCol.get("value"), numCols.get("value"));
+    				displayColors(pal, Y.one("#palette-results"));
+    				displayColors(Y.Color.Palette.mixupColors(pal), Y.one("#palette-mix-results"));
+    		},
+    		displayColors = function (pal, n) {
+    				i = 0,
+    				ret = '';
+    			for (; i < pal.length; i = i + 1) {
+    				ret += '<span class="swatch" style="background-color:' + pal[i] + '"></span>';
+    			}
+    			n.setContent(ret);
+    		};
+
+    	startCol.on("change", generatePalette);
+    	numCols.on("change", generatePalette);
+    	generatePalette();
+
+    });
+</script>
