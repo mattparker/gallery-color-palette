@@ -1,4 +1,4 @@
-YUI.add('gallery-color-palette', function (Y) {
+//YUI.add('gallery-color-palette', function (Y) {
 /**
  @author Matt Parker
  @class Y.Color
@@ -167,4 +167,4 @@ Palette.mixupColors = function (colors) {
 Y.namespace("Color").Palette = Palette;
 
 
-}, "0.1", ['color']);
+//}, "0.1", ['color']);
